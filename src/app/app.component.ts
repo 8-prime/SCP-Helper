@@ -1,8 +1,9 @@
-import { Component, OnInit } from "@angular/core";
+import { ChangeDetectorRef, Component, Inject, inject, OnInit } from "@angular/core";
 import { invoke } from "@tauri-apps/api/tauri";
 import { open } from "@tauri-apps/api/dialog"
 import { emit, listen } from '@tauri-apps/api/event'
 import { SettingsManager, get, set } from "tauri-settings";
+import { ToastrService } from "ngx-toastr";
 
 
 type Schema = {
@@ -28,11 +29,15 @@ export class AppComponent {
 
   selectedFiles: string[] = [];
 
+  refCheck = inject(ChangeDetectorRef);
+  toastService = inject(ToastrService);
+
   async ngOnInit() {
     await listen('progress', (event: any) => {
       console.log(event.payload.progress);
       
       this.progress = event.payload.progress;
+      this.refCheck.detectChanges();
     });
   }
 
@@ -61,6 +66,10 @@ export class AppComponent {
         remotePath: this.remote_path,  
       }).then((res) => {
           this.state = "initial"
+          this.toastService.success("File Transfer complete", undefined,  {
+            positionClass: "toast-bottom-center",
+            timeOut: 2000
+          })
       }).catch((err) => {
         console.error(err);
         this.state = "initial"

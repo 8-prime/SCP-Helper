@@ -68,7 +68,7 @@ async fn read_file_in_byte_chunks(file: &mut File, buffer_size: &usize, remote_f
 
         progress += buffer_length;
         iteration += 1;
-        if iteration % 10 == 0 {
+        if iteration % 100 == 0 {
             app.emit_all("progress",  Progress { progress: progress as u64 * 100 / len  }).unwrap();
         }
     }
@@ -133,6 +133,7 @@ async fn copy_files(user: &str, password: &str, local_path: &str, remote_url: &s
 
 fn main() {
     tauri::Builder::default()
+        .plugin(tauri_plugin_store::Builder::default().build())
         .invoke_handler(tauri::generate_handler![greet, copy_files])
         .run(tauri::generate_context!())
         .expect("error while running tauri application");
