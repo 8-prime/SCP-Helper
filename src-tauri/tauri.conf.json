@@ -54,7 +54,7 @@
       {
         "fullscreen": false,
         "resizable": true,
-        "title": "scp-helper",
+        "title": "SCP Helper",
         "width": 800,
         "height": 600
       }
