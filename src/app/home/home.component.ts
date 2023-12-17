@@ -21,8 +21,10 @@ export class HomeComponent {
         directory: false,
         title: "Select File or Directory to transfer"
       }) as string[];
-      this.dataService.setSelectedFiles(selected);
-      this.router.navigateByUrl("/selected");
+      if(selected && selected.length > 0 ){
+        this.dataService.setSelectedFiles(selected);
+        this.router.navigateByUrl("/selected");
+      }
     } catch (error) {
       console.error(error);
     }

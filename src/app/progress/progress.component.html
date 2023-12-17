@@ -1,1 +1,14 @@
-<p>progress works!</p>
+<div class="absolute top-0 left-0 w-full h-14 flex flex-row justify-between items-center px-4">
+    <svg routerLink="/" class="stroke-primary" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+    <svg routerLink="/settings" class="stroke-primary" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="4" y1="21" x2="4" y2="14"></line><line x1="4" y1="10" x2="4" y2="3"></line><line x1="12" y1="21" x2="12" y2="12"></line><line x1="12" y1="8" x2="12" y2="3"></line><line x1="20" y1="21" x2="20" y2="16"></line><line x1="20" y1="12" x2="20" y2="3"></line><line x1="1" y1="14" x2="7" y2="14"></line><line x1="9" y1="8" x2="15" y2="8"></line><line x1="17" y1="16" x2="23" y2="16"></line></svg>
+</div>
+<div *ngIf="!completed" class="w-full h-full flex flex-col justify-center items-center">    
+    <progress id="file" max="100" [value]="progress"></progress>
+</div>
+<div *ngIf="completed" class="w-full h-full flex flex-col justify-center items-center gap-4">
+    <svg class="w-32 h-32 stroke-primary" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg>
+    <p class="text-text text-2xl">Upload Complete</p>
+    <button (click)="home()" class="bg-secondary w-52 flex flex-row items-center p-2 rounded-md">
+        <p class="text-text text-2xl grow">Home</p>
+    </button>
+</div>

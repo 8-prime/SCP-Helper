@@ -116,18 +116,6 @@ async fn copy_files(user: &str, password: &str, local_path: &str, remote_url: &s
     else {
 
     }
-    //load given file or dir 
-    //ideally check if dir of file if dir have to recurse which ill do when im more awake and less fucked up
-
-    // Write the file
-    //this would have to be tweaked such that for each file a send call would be made with the correspinding size that can be determined by the buffer size
-
-    //actually writer the buffer data.
-    //do this in chunks and after each chunk emit an event to notify the render process about the progresss. aint that slick?
-    //this is the perfect time for an iterator and the use of while ok. this is at least how i imagine it
-    
-    //closing is likely very important ?! should not forget to check 
-
     return Ok(());
 }
 
