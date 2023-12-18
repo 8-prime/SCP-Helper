@@ -4,6 +4,9 @@ module.exports = {
     "./src/**/*.{html,ts}",
   ],
   theme: {
+    fontFamily: {
+      cocogoose: ["Cocogoose", "sans-serif"],
+    },
     extend: {
       colors: {
         'text': '#e0e0e0',

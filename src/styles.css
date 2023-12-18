@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+    font-family: "Lumanosimo";
+    src: url("assets/Cocogoose-Pro-Regular-trial.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+  }

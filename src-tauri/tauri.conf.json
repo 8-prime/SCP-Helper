@@ -33,6 +33,17 @@
       },
       "path": {
         "all": true
+      },
+      "window": {
+        "all": false,
+        "close": true,
+        "hide": true,
+        "show": true,
+        "maximize": true,
+        "minimize": true,
+        "unmaximize": true,
+        "unminimize": true,
+        "startDragging": true
       }
     },
     "bundle": {
@@ -56,7 +67,8 @@
         "resizable": true,
         "title": "SCP Helper",
         "width": 900,
-        "height": 600
+        "height": 600,
+        "decorations": false
       }
     ]
   }

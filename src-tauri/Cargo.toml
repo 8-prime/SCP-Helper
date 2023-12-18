@@ -13,7 +13,7 @@ edition = "2021"
 tauri-build = { version = "1.5", features = [] }
 
 [dependencies]
-tauri = { version = "1.5", features = [ "fs-create-dir", "fs-read-dir", "fs-write-file", "path-all", "fs-read-file", "dialog-all", "shell-open"] }
+tauri = { version = "1.5", features = [ "window-start-dragging", "window-maximize", "window-unmaximize", "window-show", "window-close", "window-minimize", "window-unminimize", "window-hide", "fs-create-dir", "fs-read-dir", "fs-write-file", "path-all", "fs-read-file", "dialog-all", "shell-open"] }
 serde = { version = "1.0", features = ["derive"] }
 serde_json = "1.0"
 ssh2 = "0.9.4"
